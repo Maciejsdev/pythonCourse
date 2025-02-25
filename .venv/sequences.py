@@ -16,8 +16,18 @@ products = ['phone', 'tablet', 'laptop']
 
 products_quantities = [343, 16, 57]
 
-products_qtys=zip(products, products_quantities)
+products_qtys = zip(products, products_quantities)
 
 for product in products_qtys:
     print(product)
     print(product[0])
+
+# Comparison of types
+
+#           MUTABLE     ORDERED      IDENTICAL ELEMENTS
+# list          YES         YES           YES
+# tuple         NO          YES           YES
+# set           YES         NO            NO
+# range         NO          YES           NO
+# dict          YES         NO            NO
+# str           NO          YES           YES
