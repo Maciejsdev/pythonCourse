@@ -59,3 +59,57 @@ list_of_values = [1, 2, 3]
 
 dict = merge_list_to_dict(list_of_keys, list_of_values)
 print(dict)
+
+
+def sum_nums(*args):  # merging arguments into tuple
+    print(args)
+    print(type(args))
+
+    print(args[0])
+    return sum(args)
+
+
+print(sum_nums(2, 3, 7, 4))
+
+
+def sort_nums(*args):
+    return sorted(args)
+
+
+sorted_nums = sort_nums(10, 3, 15, 246, 23, 4521, 213)
+
+print(sorted_nums)
+print("==============KEYWORD ARGUMENTS================")
+
+
+def get_posts_info(name, posts_qty):
+    info = f"{name} wrote {posts_qty} posts"
+    return info
+
+
+info = get_posts_info(posts_qty=5, name='Bob')
+print(info)
+
+print("=================MERGING ARGUMENTS TO THE DICT==================")
+
+
+def get_posts_info(**person):
+    print(person)
+    print(type(person))
+    info = (
+        f"{person['name']} wrote"
+        f"{person['posts_qty']} posts"
+    )
+    return info
+
+
+new_info = get_posts_info(name='Mark', posts_qty=25)
+
+print("===============Practice=================")
+
+
+def comments_info(comments_qty, day):
+    print(f"{comments_qty} comments were posted on {day}")
+
+
+comments_info(comments_qty=50, day='Monday')
