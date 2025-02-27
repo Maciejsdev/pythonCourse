@@ -113,3 +113,50 @@ def comments_info(comments_qty, day):
 
 
 comments_info(comments_qty=50, day='Monday')
+
+print("==============*kwargs================")
+
+
+def product_price_info(**product):
+    title = product['product_title']
+    price = product['product_price']
+    print(f"{title} costs {price}")
+
+
+product_price_info(product_title='Bottle of water', product_price=2)
+
+print("=============TASK=============")
+
+
+def update_car_info(brand, model, color, price):
+    dict = {'brand': brand, 'model': model, 'color': color, 'price': price}
+    dict['is_avaiable'] = True
+    return dict
+
+
+bmw_car = update_car_info(brand='BMW', model="E46", color='black', price='12700')
+print(bmw_car)
+
+
+def send_email(to, subject, *args, **kwargs):
+    print(f"Sending email to: {to}")
+    print(f"Email subject: {subject}")
+
+    if args:
+        print("Additional recipients: ")
+        for recipient in args:
+            print(recipient)
+    if kwargs:
+        print("Additional details for the email: ")
+        for key in list(kwargs):
+            print(f"{key}: {kwargs[key]}")
+
+
+send_email('test@test.com', 'Hello there!', 'other@test.com', 'other2@test.pl', 'someone@test.pl', bcc="ayken@code.pl",
+           img='test.png')
+print("_______________")
+send_email('test@test.com', 'Hello there!', bcc="ayken@code.pl", img='test.png')
+print("_______________")
+send_email('test@test.com', 'Hello there!', 'other@test.com', 'other2@test.pl', 'someone@test.pl')
+print("_______________")
+send_email('test@test.com', 'Hello there!', )
